@@ -40,7 +40,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/auth/reactamplifyapp62370368-cloudformation-template.json",
         "logicalId": "authreactamplifyapp62370368"
       },
-      "lastPushTimeStamp": "2022-10-08T19:26:26.921Z",
+      "lastPushTimeStamp": "2022-10-08T20:21:18.123Z",
       "output": {
         "UserPoolId": "us-east-1_8YLaShOnM",
         "AppClientIDWeb": "4knjnjgiks9863bchvhecoju8g",
@@ -51,6 +51,50 @@
         "UserPoolName": "reactamplifyapp62370368_userpool_62370368"
       },
       "lastPushDirHash": "ZNp9uBu5UzzXTpgPvEU6XFhPqAE="
+    }
+  },
+  "api": {
+    "reactamplifyapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "sutffwtm3fa5hbynk5wwjbt5we",
+        "GraphQLAPIEndpointOutput": "https://lyicewondffiver252maece7fu.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-zcvacs5etnbyhgvkkvwkuifrwe"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apireactamplifyapp"
+      },
+      "lastPushTimeStamp": "2022-10-08T20:21:26.829Z",
+      "lastPushDirHash": "rxpzD1YcQrks4nunCrGERqBQrUg="
+    }
+  },
+  "storage": {
+    "imageStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2022-10-08T20:21:26.829Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageimageStorage"
+      },
+      "output": {
+        "BucketName": "amplify-image191257-staging",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "iIlRqUWjCRtv+E512s/NNUfoLOY="
     }
   }
 }
