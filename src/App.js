@@ -1,25 +1,30 @@
+import { Link, Flex, Heading } from '@aws-amplify/ui-react';
 import './App.css';
-import logo from "./logo.svg";
-import "@aws-amplify/ui-react/styles.css";
 import {
-  withAuthenticator,
-  Button,
-  Heading,
-  Image,
-  View,
-  Card,
-} from "@aws-amplify/ui-react";
+    BrowserRouter as Router,
+    Link as ReactRouterLink,
+    Routes,
+    Route,
+} from 'react-router-dom';
 
-function App({ signOut }) {
-  return (
-      <View className="App">
-        <Card>
-          <Image src={logo} className="App-logo" alt="logo" />
-          <Heading level={1}>We now have Auth!</Heading>
-        </Card>
-        <Button onClick={signOut}>Sign Out</Button>
-      </View>
-  );
+import Products from './Products'
+import Orders from './Orders'
+
+
+function App() {
+    return (
+        <Router>
+            <Flex>
+                <ReactRouterLink to="/" component={Link}><button type="button"> Products </button></ReactRouterLink>
+                <ReactRouterLink to="/orders" component={Link}><button type="button">Orders</button></ReactRouterLink>
+            </Flex>
+
+            <Routes>
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/" element={<Products />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default withAuthenticator(App);
+export default App;

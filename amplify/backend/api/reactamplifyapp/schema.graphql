@@ -17,7 +17,7 @@ type Note @model @auth(rules: [ { allow: public } ] ){
 
 type Product @model @auth(rules: [ { allow: public } ] ){
   id: ID!
-  name: String!
+  name: String! @index(name: "productsByName", queryField: "productsByName", sortKeyFields: ["createdAt"])
   description: String
   image: String
   price: Float!

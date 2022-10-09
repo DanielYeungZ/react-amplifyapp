@@ -214,7 +214,7 @@
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "S3DeploymentBucket": "amplify-amplifyeb582901233e4-staging-191257-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/6b29cde94265b47e4da5e7714d5f6760aa1c0292",
+          "S3DeploymentRootKey": "amplify-appsync-files/35bb80d57c0014885124bc2dc3d2d27889979b73",
           "env": "staging"
         }
       }
@@ -248,6 +248,40 @@
           "s3PermissionsAuthenticatedUploads": "s3:PutObject",
           "s3PermissionsGuestPublic": "DISALLOW",
           "s3PermissionsGuestUploads": "DISALLOW",
+          "env": "staging"
+        }
+      }
+    },
+    "functiontrigger": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/trigger-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
+          "s3Key": "amplify-builds/trigger-717331456a376e54526d-build.zip",
+          "env": "staging"
+        }
+      }
+    },
+    "functionstream": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/stream-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
+          "s3Key": "amplify-builds/stream-4f637557474b56672f65-build.zip",
+          "apireactamplifyappGraphQLAPIIdOutput": {
+            "Fn::GetAtt": [
+              "apireactamplifyapp",
+              "Outputs.GraphQLAPIIdOutput"
+            ]
+          },
+          "apireactamplifyappGraphQLAPIEndpointOutput": {
+            "Fn::GetAtt": [
+              "apireactamplifyapp",
+              "Outputs.GraphQLAPIEndpointOutput"
+            ]
+          },
           "env": "staging"
         }
       }

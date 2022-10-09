@@ -14,6 +14,16 @@
     "categories": {
       "auth": {
         "reactamplifyapp62370368": {}
+      },
+      "function": {
+        "stream": {
+          "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
+          "s3Key": "amplify-builds/stream-4f637557474b56672f65-build.zip"
+        },
+        "trigger": {
+          "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
+          "s3Key": "amplify-builds/trigger-717331456a376e54526d-build.zip"
+        }
       }
     }
   }
