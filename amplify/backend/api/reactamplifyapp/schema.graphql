@@ -22,6 +22,8 @@ type Product @model @auth(rules: [ { allow: public } ] ){
   image: String
   price: Float!
   quantity: Int!
+  type: String! @index(name: "productsByDate", queryField: "productsByDate", sortKeyFields: ["createdAt"])
+  createdAt: String!
 }
 
 type Order @model @auth(rules: [ { allow: public } ] ){
