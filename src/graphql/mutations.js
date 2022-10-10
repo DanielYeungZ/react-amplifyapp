@@ -149,11 +149,16 @@ export const createOrder = /* GraphQL */ `
   ) {
     createOrder(input: $input, condition: $condition) {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }
@@ -165,11 +170,16 @@ export const updateOrder = /* GraphQL */ `
   ) {
     updateOrder(input: $input, condition: $condition) {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }
@@ -181,11 +191,16 @@ export const deleteOrder = /* GraphQL */ `
   ) {
     deleteOrder(input: $input, condition: $condition) {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }

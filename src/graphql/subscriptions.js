@@ -119,11 +119,16 @@ export const onCreateOrder = /* GraphQL */ `
   subscription OnCreateOrder {
     onCreateOrder {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }
@@ -132,11 +137,16 @@ export const onUpdateOrder = /* GraphQL */ `
   subscription OnUpdateOrder {
     onUpdateOrder {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }
@@ -145,11 +155,16 @@ export const onDeleteOrder = /* GraphQL */ `
   subscription OnDeleteOrder {
     onDeleteOrder {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }

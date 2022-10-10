@@ -3,6 +3,7 @@ import './App.css';
 import "@aws-amplify/ui-react/styles.css";
 import omitEmpty from 'omit-empty'
 import {API, Storage} from "aws-amplify";
+
 import {
     Button,
     Flex,
@@ -24,15 +25,17 @@ import {
     createProduct as createGQLProduct,
     deleteProduct as deleteGQLProduct,
     updateProduct as updateGQLProduct,
-
+    createOrder as createGQLOrder
 } from "./graphql/mutations";
+
 
 const Products = ({signOut}) => {
     const [products, setProducts] = useState([]);
+    const [order, setOrder] = useState(null);
     const [currentProduct, setCurrentProduct] = useState(null);
-    const [currentEdit, setCurrentEdit] = useState({});
     const [currentPageIndex, setCurrentPageIndex] = React.useState(1);
     const totalPages = Math.ceil(products.length / 10);
+
 
     const handleNextPage = () => {
         setCurrentPageIndex(currentPageIndex + 1);
@@ -141,12 +144,33 @@ const Products = ({signOut}) => {
 
     const reset = async (event) => {
         setCurrentProduct(null)
+        setOrder(null)
+        event.target.reset();
+    }
+
+    async function createOrder(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        const data = {
+            productID: order.id,
+            productName: order.name,
+            quantity: form.get("quantity"),
+            type: 'order',
+            status: 'PROCESSING'
+        };
+        console.log(data)
+        await API.graphql({
+            query: createGQLOrder,
+            variables: {input: data},
+        });
+        setOrder(null)
         event.target.reset();
     }
 
     return (
         <View className="App">
             <Heading level={1}>Products Page</Heading>
+
             <View as="form" margin="3rem 0"
                   onSubmit={currentProduct ? editProduct : createProduct}
                   onReset={reset}
@@ -211,8 +235,42 @@ const Products = ({signOut}) => {
                     <Button type="submit" variation="primary">
                         Search Product
                     </Button>
+
                 </Flex>
             </View>
+
+
+            {order && (
+                <View as="form" margin="3rem 0"
+                      onSubmit={createOrder}
+                      onReset={reset}>
+                    <Flex direction="row" justifyContent="center">
+                        <TextField
+                            name="name"
+                            placeholder="Product Name"
+                            labelHidden
+                            variation="quiet"
+                            required
+                            value={order.name}
+                            disabled={true}
+                        />
+                        <TextField
+                            name="quantity"
+                            placeholder="Order quantity"
+                            label="Product quantity"
+                            labelHidden
+                            variation="quiet"
+                            required
+                        />
+                        <Button type="submit" variation="primary">
+                            Create Order
+                        </Button>
+                        <Button type="reset" variation="secondary">
+                            Cancel Order
+                        </Button>
+                    </Flex>
+                </View>)}
+
 
             <Heading level={2}>Current Products</Heading>
             <View margin="3rem 0">
@@ -241,6 +299,10 @@ const Products = ({signOut}) => {
                                     <TableCell>
                                         <Button variation="primary" onClick={() => updateProduct(product)}>
                                             Update
+                                        </Button>
+                                        &nbsp;
+                                        <Button variation="primary" onClick={() => setOrder(product)}>
+                                            Create Order
                                         </Button>
                                         &nbsp;
                                         <Button variation="primary" onClick={() => removeProduct(product)}>

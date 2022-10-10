@@ -45,7 +45,7 @@
         "IdentityPoolName": "reactamplifyapp62370368_identitypool_62370368__staging",
         "UserPoolName": "reactamplifyapp62370368_userpool_62370368"
       },
-      "lastPushTimeStamp": "2022-10-09T19:40:50.471Z",
+      "lastPushTimeStamp": "2022-10-10T02:45:16.438Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/auth/reactamplifyapp62370368-cloudformation-template.json",
         "logicalId": "authreactamplifyapp62370368"
@@ -57,7 +57,15 @@
     "reactamplifyapp": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "reactamplifyapp62370368",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
@@ -66,18 +74,25 @@
               "apiKeyExpirationDays": 7
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authreactamplifyapp62370368"
+              }
+            }
+          ]
         },
         "GraphQLAPIIdOutput": "sutffwtm3fa5hbynk5wwjbt5we",
         "GraphQLAPIEndpointOutput": "https://lyicewondffiver252maece7fu.appsync-api.us-east-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-zcvacs5etnbyhgvkkvwkuifrwe"
       },
-      "lastPushTimeStamp": "2022-10-09T19:53:11.674Z",
+      "lastPushTimeStamp": "2022-10-10T02:45:22.661Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apireactamplifyapp"
       },
-      "lastPushDirHash": "NliyDR99xckIcfgVc4g9MCxtq0E="
+      "lastPushDirHash": "Y6wVZ7UnHhrshBzheo1rofrb/fU="
     }
   },
   "storage": {
@@ -89,7 +104,7 @@
         "BucketName": "amplify-image191257-staging",
         "Region": "us-east-1"
       },
-      "lastPushTimeStamp": "2022-10-09T19:40:52.610Z",
+      "lastPushTimeStamp": "2022-10-10T02:45:16.443Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageimageStorage"
@@ -108,7 +123,7 @@
         "Name": "trigger-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole658c3c57-staging"
       },
-      "lastPushTimeStamp": "2022-10-09T19:40:50.477Z",
+      "lastPushTimeStamp": "2022-10-10T02:45:16.447Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/trigger-cloudformation-template.json",
         "logicalId": "functiontrigger"
@@ -143,7 +158,7 @@
         "Name": "stream-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole16e9af79-staging"
       },
-      "lastPushTimeStamp": "2022-10-09T19:40:50.481Z",
+      "lastPushTimeStamp": "2022-10-10T02:45:16.449Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/stream-cloudformation-template.json",
         "logicalId": "functionstream"

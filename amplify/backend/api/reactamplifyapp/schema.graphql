@@ -28,9 +28,23 @@ type Product @model @auth(rules: [ { allow: public } ] ){
 
 type Order @model @auth(rules: [ { allow: public } ] ){
   id: ID!
-  ownerID: ID!
+  productName: String! @index(name: "ordersByName", queryField: "ordersByName", sortKeyFields: ["createdAt"])
   productID: ID!
   quantity: Int!
-  status: String!
+  type: String! @index(name: "ordersByDate", queryField: "ordersByDate", sortKeyFields: ["createdAt"])
+  status: OrderStatus!
+  createdAt: String!
+  shipInfo: ShipInfo
 }
 
+enum OrderStatus {
+  PROCESSING
+  CANCELLED
+  DELIVERED
+}
+
+
+type ShipInfo {
+    company: String!
+    number: String!
+}

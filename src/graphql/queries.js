@@ -102,11 +102,16 @@ export const getOrder = /* GraphQL */ `
   query GetOrder($id: ID!) {
     getOrder(id: $id) {
       id
-      ownerID
+      productName
       productID
       quantity
+      type
       status
       createdAt
+      shipInfo {
+        company
+        number
+      }
       updatedAt
     }
   }
@@ -120,11 +125,16 @@ export const listOrders = /* GraphQL */ `
     listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        ownerID
+        productName
         productID
         quantity
+        type
         status
         createdAt
+        shipInfo {
+          company
+          number
+        }
         updatedAt
       }
       nextToken
@@ -189,6 +199,76 @@ export const productsByDate = /* GraphQL */ `
         quantity
         type
         createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const ordersByName = /* GraphQL */ `
+  query OrdersByName(
+    $productName: String!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelOrderFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    ordersByName(
+      productName: $productName
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        productName
+        productID
+        quantity
+        type
+        status
+        createdAt
+        shipInfo {
+          company
+          number
+        }
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const ordersByDate = /* GraphQL */ `
+  query OrdersByDate(
+    $type: String!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelOrderFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    ordersByDate(
+      type: $type
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        productName
+        productID
+        quantity
+        type
+        status
+        createdAt
+        shipInfo {
+          company
+          number
+        }
         updatedAt
       }
       nextToken
