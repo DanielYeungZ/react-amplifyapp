@@ -57,6 +57,7 @@ const Orders = ({signOut}) => {
         const apiData = await API.graphql({query: query, variables: filterOptions});
         const data = apiData.data.ordersByDate || apiData.data.ordersByName;
         const orders = data.items
+        console.log( orders)
         setOrders(orders);
     }
 
@@ -80,7 +81,7 @@ const Orders = ({signOut}) => {
             status: form.get("status"),
 
         })
-        console.log( data)
+
         await API.graphql({
             query: updateGQLOrder,
             variables: {
@@ -200,8 +201,8 @@ const Orders = ({signOut}) => {
                                         <TableCell>{order.productName}</TableCell>
                                         <TableCell>{order.quantity}</TableCell>
                                         <TableCell>{order.status}</TableCell>
-                                        <TableCell>{order.ShipInfo && order.ShipInfo.company}</TableCell>
-                                        <TableCell>{order.ShipInfo && order.ShipInfo.number}</TableCell>
+                                        <TableCell>{order.shipInfo && order.shipInfo.company}</TableCell>
+                                        <TableCell>{order.shipInfo && order.shipInfo.number}</TableCell>
                                         <TableCell>{date.toString()}</TableCell>
                                         <Button variation="primary" onClick={() => setOrder(order)}>
                                             Update

@@ -179,39 +179,40 @@ const Products = ({signOut}) => {
                     <TextField
                         name="name"
                         placeholder="Product Name"
-                        labelHidden
+                        label={currentProduct ? "Product Name(readOnly)" : "Product Name"}
                         variation="quiet"
                         required
                         value={currentProduct ? currentProduct.name : null}
-                        disabled={currentProduct ? true : false}
+                        disabled={order ? true : false}
+                        readOnly={currentProduct ? true : false}
                     />
                     <TextField
                         name="description"
-                        placeholder="Product description"
+                        placeholder="description"
                         label="Product description"
-                        labelHidden
+                        disabled={order ? true :false}
                         defaultValue={currentProduct ? currentProduct.description : ''}
                         variation="quiet"
                     />
                     <TextField
                         name="price"
-                        placeholder="Product price"
+                        placeholder="price"
                         label="Product price"
-                        labelHidden
                         variation="quiet"
+                        disabled={order ? true :false}
                         defaultValue={currentProduct ? currentProduct.price : ''}
                         required
                     />
                     <TextField
                         name="quantity"
-                        placeholder="Product quantity"
+                        placeholder="quantity"
                         label="Product quantity"
-                        labelHidden
                         variation="quiet"
+                        disabled={order ? true :false}
                         defaultValue={currentProduct ? currentProduct.quantity : ''}
                         required
                     />
-                    <Button type="submit" variation="primary">
+                    <Button disabled={order ? true :false} type="submit" variation="primary">
                         {`${currentProduct ? "Update" : "Create"} Product`}
                     </Button>
                     {currentProduct
@@ -221,7 +222,7 @@ const Products = ({signOut}) => {
                 </Flex>
             </View>
 
-            <View as="form" margin="3rem 0" onSubmit={searchProduct}>
+            <View  as="form" margin="3rem 0" onSubmit={searchProduct}>
                 <Flex direction="row" justifyContent="center">
                     <TextField
                         name="name"
@@ -230,9 +231,9 @@ const Products = ({signOut}) => {
                         labelHidden
                         variation="quiet"
                         required
-                        disabled={currentProduct ? true : false}
+                        disabled={order || currentProduct ? true : false}
                     />
-                    <Button type="submit" variation="primary">
+                    <Button disabled={order || currentProduct ? true :false} type="submit" variation="primary">
                         Search Product
                     </Button>
 
