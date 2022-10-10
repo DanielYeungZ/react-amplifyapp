@@ -45,7 +45,7 @@
         "IdentityPoolName": "reactamplifyapp62370368_identitypool_62370368__staging",
         "UserPoolName": "reactamplifyapp62370368_userpool_62370368"
       },
-      "lastPushTimeStamp": "2022-10-10T02:45:16.438Z",
+      "lastPushTimeStamp": "2022-10-10T03:25:49.773Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/auth/reactamplifyapp62370368-cloudformation-template.json",
         "logicalId": "authreactamplifyapp62370368"
@@ -87,7 +87,7 @@
         "GraphQLAPIEndpointOutput": "https://lyicewondffiver252maece7fu.appsync-api.us-east-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-zcvacs5etnbyhgvkkvwkuifrwe"
       },
-      "lastPushTimeStamp": "2022-10-10T02:45:22.661Z",
+      "lastPushTimeStamp": "2022-10-10T03:25:49.777Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apireactamplifyapp"
@@ -104,7 +104,7 @@
         "BucketName": "amplify-image191257-staging",
         "Region": "us-east-1"
       },
-      "lastPushTimeStamp": "2022-10-10T02:45:16.443Z",
+      "lastPushTimeStamp": "2022-10-10T03:25:49.781Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageimageStorage"
@@ -123,7 +123,7 @@
         "Name": "trigger-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole658c3c57-staging"
       },
-      "lastPushTimeStamp": "2022-10-10T02:45:16.447Z",
+      "lastPushTimeStamp": "2022-10-10T03:25:49.784Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/trigger-cloudformation-template.json",
         "logicalId": "functiontrigger"
@@ -158,20 +158,20 @@
         "Name": "stream-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole16e9af79-staging"
       },
-      "lastPushTimeStamp": "2022-10-10T02:45:16.449Z",
+      "lastPushTimeStamp": "2022-10-10T03:25:50.258Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/stream-cloudformation-template.json",
         "logicalId": "functionstream"
       },
       "s3Bucket": {
         "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
-        "s3Key": "amplify-builds/stream-4f637557474b56672f65-build.zip"
+        "s3Key": "amplify-builds/stream-39434b4264556e4d4d48-build.zip"
       },
-      "lastBuildTimeStamp": "2022-10-09T01:58:26.898Z",
+      "lastBuildTimeStamp": "2022-10-10T03:23:39.911Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-10-09T01:58:26.947Z",
-      "distZipFilename": "stream-4f637557474b56672f65-build.zip",
-      "lastPushDirHash": "EMsNdofCb+hbJ+vPUqXNC8DhzHM="
+      "lastPackageTimeStamp": "2022-10-10T03:23:39.991Z",
+      "distZipFilename": "stream-39434b4264556e4d4d48-build.zip",
+      "lastPushDirHash": "ddkZz/K8ZKo73+E9rFDWg6nK0F4="
     }
   }
 }

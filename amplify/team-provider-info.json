@@ -18,7 +18,7 @@
       "function": {
         "stream": {
           "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
-          "s3Key": "amplify-builds/stream-4f637557474b56672f65-build.zip"
+          "s3Key": "amplify-builds/stream-39434b4264556e4d4d48-build.zip"
         },
         "trigger": {
           "deploymentBucketName": "amplify-amplifyeb582901233e4-staging-191257-deployment",
