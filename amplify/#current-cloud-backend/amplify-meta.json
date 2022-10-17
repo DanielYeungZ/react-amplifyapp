@@ -45,7 +45,7 @@
         "IdentityPoolName": "reactamplifyapp62370368_identitypool_62370368__staging",
         "UserPoolName": "reactamplifyapp62370368_userpool_62370368"
       },
-      "lastPushTimeStamp": "2022-10-10T05:07:47.955Z",
+      "lastPushTimeStamp": "2022-10-17T23:37:11.359Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/auth/reactamplifyapp62370368-cloudformation-template.json",
         "logicalId": "authreactamplifyapp62370368"
@@ -71,7 +71,9 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-10-17T23:29:35.437Z",
+              "description": "gql"
             }
           },
           "additionalAuthenticationProviders": [
@@ -87,12 +89,12 @@
         "GraphQLAPIEndpointOutput": "https://lyicewondffiver252maece7fu.appsync-api.us-east-1.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-zcvacs5etnbyhgvkkvwkuifrwe"
       },
-      "lastPushTimeStamp": "2022-10-10T05:07:47.958Z",
+      "lastPushTimeStamp": "2022-10-17T23:37:16.972Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apireactamplifyapp"
       },
-      "lastPushDirHash": "Y6wVZ7UnHhrshBzheo1rofrb/fU="
+      "lastPushDirHash": "Be6YOeLoUodit+kWfbUMzNAUwLA="
     }
   },
   "storage": {
@@ -104,7 +106,7 @@
         "BucketName": "amplify-image191257-staging",
         "Region": "us-east-1"
       },
-      "lastPushTimeStamp": "2022-10-10T05:07:47.961Z",
+      "lastPushTimeStamp": "2022-10-17T23:37:11.369Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageimageStorage"
@@ -123,7 +125,7 @@
         "Name": "trigger-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole658c3c57-staging"
       },
-      "lastPushTimeStamp": "2022-10-10T05:07:47.963Z",
+      "lastPushTimeStamp": "2022-10-17T23:37:11.377Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/trigger-cloudformation-template.json",
         "logicalId": "functiontrigger"
@@ -158,7 +160,7 @@
         "Name": "stream-staging",
         "LambdaExecutionRole": "reactamplifyappLambdaRole16e9af79-staging"
       },
-      "lastPushTimeStamp": "2022-10-10T05:07:48.439Z",
+      "lastPushTimeStamp": "2022-10-17T23:37:11.380Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyeb582901233e4-staging-191257-deployment/amplify-cfn-templates/function/stream-cloudformation-template.json",
         "logicalId": "functionstream"
